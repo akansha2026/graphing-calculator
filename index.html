@@ -1,40 +1,61 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Graphing Calculator</title>
-  </head>
-  <body>
-    <div id="app" class="justify-center bg-zinc-100" >
-      <section class="min-h-screen w-full p-4 flex items-center justify-center gap-8 flex-col bg-zinc-100" id="main">
-        <h1 class="text-4xl font-bold text-center text-blue-500">Graphing Calculator</h1>
-        <div class="flex justify-center shadow-lg">
-          <input
-            class="flex-1 px-4 py-3 bg-white text-black outline-none border-none text-sm md:text-xl"
-            type="text"
-            placeholder="Enter a function"
-          />
-          <a
-          href="#result"
-            class="px-6 py-3 text-sm md:text-xl bg-blue-500 text-white hover:bg-blue-600 transition-all ease-linear duration-200"
-          >
-            Plot
-          </a>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphing Calculator</title>
+</head>
+
+<body>
+  <div id="app" class="justify-center bg-zinc-100">
+    <section class="min-h-screen w-full p-4 flex items-center justify-center gap-8 flex-col bg-zinc-100" id="main">
+      <h1 class="text-4xl font-bold text-center text-blue-500">Graphing Calculator</h1>
+      <div class="flex justify-center shadow-lg">
+        <input class="flex-1 px-4 py-3 bg-white text-black outline-none border-none text-sm md:text-xl w-96" type="text"
+          placeholder="Enter a function e.g. x^2 + 2x + 1" />
+        <a href="#result"
+          class="px-6 py-3 text-sm md:text-xl bg-blue-500 text-white hover:bg-blue-600 transition-all ease-linear duration-200">
+          Plot
+        </a>
+      </div>
+      <div class=" w-full md:w-3/4 lg:w-1/2 p-6 bg-white shadow-lg rounded-md text-gray-900">
+        <h2 class="text-2xl font-bold mb-4">Interacting with the Application</h2>
+        <div class="mb-4">
+          <h3 class="text-xl font-semibold mb-2">Zooming</h3>
+          <p><strong>Activate Zoom:</strong> Hold down the <kbd class="px-2 py-1 bg-gray-200 rounded">Control</kbd> key.</p>
+          <p><strong>Zoom In/Out:</strong> Scroll up to zoom in and scroll down to zoom out. The graph will scale accordingly.</p>
         </div>
-      </section>
-      <canvas class="items-center h-screen w-full bg-zinc-50" id="result"> 
-      </canvas>
-      <section id="colors" class="fixed top-4 right-4 flex flex-col gap-2 bg-white p-4 shadow-md rounded-md text-black select-none border-2 border-zinc-200">
-        <div class="flex gap-2 items-center justify-between text-sm">
-          <label for="axes">Axes color</label>
-          <input type="color" class="w-8 h-6 rounded-sm bg-zinc-400" id="axes" value="#123456">
+        <div class="mb-4">
+          <h3 class="text-xl font-semibold mb-2">Panning</h3>
+          <p><strong>Click and Drag:</strong> Click on the canvas and hold the mouse button down.</p>
+          <p><strong>Move:</strong> Drag the mouse to move the graph around.</p>
         </div>
-        <div class="flex gap-2 items-center justify-between text-sm">
-          <label for="graph">Graph color</label>
-          <input type="color" class="w-8 h-6 rounded-sm bg-zinc-400" id="graph" value="#FF0000">
+        <div class="mb-4">
+          <h3 class="text-xl font-semibold mb-2">Customizing Colors</h3>
+          <p><strong>Axes Color:</strong> Use the input field with the ID <code>#axes</code> to select a new color for the axes.</p>
+          <p><strong>Graph Color:</strong> Use the input field with the ID <code>#graph</code> to select a new color for the graph.</p>
         </div>
-      </section>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Resetting the Graph</h3>
+          <p><strong>Double-Click:</strong> Double-click anywhere on the canvas to reset the graph to its original position and scale.</p>
+        </div>
+      </div>
+    </section>
+    <canvas class="items-center h-screen w-full bg-zinc-50" id="result">
+    </canvas>
+    <section id="colors"
+      class="fixed top-4 right-4 flex flex-col gap-2 bg-white p-4 shadow-md rounded-md text-black select-none border-2 border-zinc-200">
+      <div class="flex gap-2 items-center justify-between text-sm">
+        <label for="axes">Axes color</label>
+        <input type="color" class="w-8 h-6 rounded-sm bg-zinc-400" id="axes" value="#123456">
+      </div>
+      <div class="flex gap-2 items-center justify-between text-sm">
+        <label for="graph">Graph color</label>
+        <input type="color" class="w-8 h-6 rounded-sm bg-zinc-400" id="graph" value="#FF0000">
+      </div>
+    </section>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
